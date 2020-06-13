@@ -1,4 +1,5 @@
 ﻿using System;
+using AbstractFactory.Models;
 using AbstractFactory.Products;
 
 namespace AbstractFactory.Factories
@@ -6,14 +7,17 @@ namespace AbstractFactory.Factories
     //concrete factory
     public class SourBeerPairingFactory : IBeerPairingFactory
     {
-        public BeerStyle GetBeer()
+        public BeerStyle CreateBeer()
         {
-            throw new NotImplementedException();
+            return new Lambic()
+            {
+                Beer = new Beer("Drie Fonteinen Oude Gueuze")
+            };
         }
 
-        public Food GetFood()
+        public Food CreateFood()
         {
-            throw new NotImplementedException();
+            return new Chevre();
         }
     }
 }

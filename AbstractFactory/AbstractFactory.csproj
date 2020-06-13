@@ -8,6 +8,7 @@
   <ItemGroup>
     <Folder Include="Factories\" />
     <Folder Include="Products\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Factories\TurkeySandwich.cs" />

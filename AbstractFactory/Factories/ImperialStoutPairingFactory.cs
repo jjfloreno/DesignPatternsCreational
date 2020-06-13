@@ -1,18 +1,22 @@
 ﻿using System;
+using AbstractFactory.Models;
 using AbstractFactory.Products;
 
 namespace AbstractFactory.Factories
 {
     public class ImperialStoutPairingFactory : IBeerPairingFactory
     {
-        public BeerStyle GetBeer()
+        public BeerStyle CreateBeer()
         {
-            throw new NotImplementedException();
+            return new ImperialStout()
+            {
+                Beer = new Beer("Oskar Blues Ten Fidy")
+            };
         }
 
-        public Food GetFood()
+        public Food CreateFood()
         {
-            throw new NotImplementedException();
+            return new DarkChocolate();
         }
     }
 }

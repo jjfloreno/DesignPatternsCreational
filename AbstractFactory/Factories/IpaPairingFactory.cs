@@ -1,4 +1,5 @@
 ﻿using System;
+using AbstractFactory.Models;
 using AbstractFactory.Products;
 
 namespace AbstractFactory.Factories
@@ -6,12 +7,15 @@ namespace AbstractFactory.Factories
     //concrete factory
     public class IpaPairingFactory : IBeerPairingFactory
     {
-        public BeerStyle GetBeer()
+        public BeerStyle CreateBeer()
         {
-            return new Ipa();
+            return new Ipa
+            {
+                Beer = new Beer("Bell's Two Hearted")
+            };
         }
 
-        public Food GetFood()
+        public Food CreateFood()
         {
             return new RedCurry();
         }
